@@ -24,9 +24,9 @@ def getPhoneInfo():
             print(phoneFile.cell_value(i, 0)+"not phoneNum,continue")
             phoneInfoFile.write(i + 1, 0, phoneFile.cell_value(i, 0)) # 给新表的各列添加对应的数据
             continue
-        data = Phone().find(Telvalue)
-        phoneInfoFile.write(i + 1, 0, Telvalue) # 给新表的各列添加对应的数据
         try:
+            data = Phone().find(Telvalue)
+            phoneInfoFile.write(i + 1, 0, Telvalue) # 给新表的各列添加对应的数据
             phoneInfoFile.write(i + 1, 1, data['province'])
             phoneInfoFile.write(i + 1, 2, data['city'])
             phoneInfoFile.write(i + 1, 3, data['area_code'])
